@@ -1,3 +1,4 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
 import chalk from "chalk";
 import chalkAnimation from "chalk-animation";
@@ -154,7 +155,6 @@ let hardLevel = async () => {
 
     return result
 }
-console.log(randomNumberThree);
 
 async function excuteRandomNumberThree() {
     do {
