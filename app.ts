@@ -177,3 +177,30 @@ async function excuteRandomNumberThree() {
 }
 
 /*********************************************************************/
+
+async function chooseTheLevel() {
+    let result = await inquirer.prompt([
+        {
+            type: "list",
+            name: "choose_a_level",
+            message: "choose a level",
+            choices: ['Easy', 'Medium', 'Hard']
+        }
+    ])
+
+    switch (result.choose_a_level) {
+        case "Easy":
+            await excuteRandomNumber()
+            break;
+        case "Medium":
+            await excuteRandomNumberTwo()
+            break;
+        case "Hard":
+            await excuteRandomNumberThree()
+            break;
+        default:
+            return 'please choose a valid level'
+    }
+}
+
+await chooseTheLevel()
