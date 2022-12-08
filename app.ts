@@ -56,3 +56,124 @@ let score: number = 0
 let chances: number = 5;
 let secondChance: number = 5;
 let thirdChance: number = 5;
+
+let easyLevel = async () => {
+    let result = await inquirer.prompt([
+        {
+            name: "userInput",
+            type: 'number',
+            message: "guess a number: ",
+            validate: (answer) => {
+                if (isNaN(answer)) {
+                    return "Please enter a valid number";
+                }
+                return true;
+            },
+        }
+    ])
+
+    return result
+}
+async function excuteRandomNumber() {
+    console.log(`${chalk.cyan.bold(`You have to guess a number between 1 to 25`)}  `)
+    do {
+        let { userInput } = await easyLevel()
+
+        if (randomNumber === userInput) {              
+            console.log(`${chalk.green.bold("Hurray!!, you guessed the right number...!!!")}`);
+            score += 10
+            console.log(`${chalk.cyan.bold(`your score is ${score}`)}`)
+            break;
+        }        
+        else if (chances == 0) {
+            console.log(`${chalk.bgRed("Game over, you lose!")}`);
+            process.exit(1);
+        }
+        else {
+            chances--;
+        }
+    } while (chances >= 0);
+}
+/*********************************************************************/
+
+let mediumLevel = async () => {
+    console.log(`${chalk.cyan.bold(`You have to guess a number between 1 to 50`)}`)
+    let result = await inquirer.prompt([
+        {
+            name: "userInput",
+            type: 'number',
+            message: "guess a number: ",
+            validate: (answer) => {
+                if (isNaN(answer)) {
+                    return "Please enter a valid number";
+                }
+                return true;
+            },
+        }
+    ])
+
+    return result
+}
+
+async function excuteRandomNumberTwo() {
+    do {
+        let { userInput } = await mediumLevel()
+
+        if (randomMediumNumber === userInput) {             
+            console.log(`${chalk.green.bold("Hurray!!, you guessed the right number...!!!")}`);
+            score += 10
+            console.log(`${chalk.cyan.bold(`your score is ${score}`)}`)
+            break;
+        }
+
+        else if (secondChance == 0) {
+            console.log(`${chalk.bgRed("Game over, you lose!")}`);
+            process.exit(1);
+        }
+        else {
+            secondChance--;
+        }
+    } while (secondChance >= 0);
+}
+/*********************************************************************/
+let hardLevel = async () => {
+    console.log(`${chalk.cyan.bold(`You have to guess a number between 1 to 100`)}`)
+    let result = await inquirer.prompt([
+        {
+            name: "userInput",
+            type: 'number',
+            message: "guess a number: ",
+            validate: (answer) => {
+                if (isNaN(answer)) {
+                    return "Please enter a valid number";
+                }
+                return true;
+            },
+        }
+    ])
+
+    return result
+}
+
+async function excuteRandomNumberThree() {
+    do {
+        let { userInput } = await hardLevel()
+
+        if (randomNumberThree === userInput) {
+            console.log(`${chalk.green.bold("Hurray!!, you guessed the right number...!!!")}`);
+            score += 10
+            console.log(`${chalk.cyan.bold(`your score is ${score}`)}`)
+            break;
+        }
+
+        else if (thirdChance == 0) {
+            console.log(`${chalk.bgRed("Game over, you lose!")}`);
+            process.exit(1);
+        }
+        else {
+            thirdChance--;
+        }
+    } while (thirdChance >= 0);
+}
+
+/*********************************************************************/
