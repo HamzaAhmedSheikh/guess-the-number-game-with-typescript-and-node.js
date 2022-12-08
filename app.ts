@@ -40,8 +40,8 @@ async function welcome() {
          ${chalk.hex('#FFA500').bold(`if you win the game cli will ask to do you want to continue? press y or n`)}
          ${chalk.red.bold(`if you lose the game is over`)}         
         `
-       );
-    }
+    );
+}
 
 await welcome()
 
@@ -79,12 +79,12 @@ async function excuteRandomNumber() {
     do {
         let { userInput } = await easyLevel()
 
-        if (randomNumber === userInput) {              
+        if (randomNumber === userInput) {
             console.log(`${chalk.green.bold("Hurray!!, you guessed the right number...!!!")}`);
             score += 10
             console.log(`${chalk.cyan.bold(`your score is ${score}`)}`)
             break;
-        }        
+        }
         else if (chances == 0) {
             console.log(`${chalk.bgRed("Game over, you lose!")}`);
             process.exit(1);
@@ -119,7 +119,7 @@ async function excuteRandomNumberTwo() {
     do {
         let { userInput } = await mediumLevel()
 
-        if (randomMediumNumber === userInput) {             
+        if (randomMediumNumber === userInput) {
             console.log(`${chalk.green.bold("Hurray!!, you guessed the right number...!!!")}`);
             score += 10
             console.log(`${chalk.cyan.bold(`your score is ${score}`)}`)
@@ -154,6 +154,7 @@ let hardLevel = async () => {
 
     return result
 }
+console.log(randomNumberThree);
 
 async function excuteRandomNumberThree() {
     do {
@@ -203,4 +204,16 @@ async function chooseTheLevel() {
     }
 }
 
-await chooseTheLevel()
+async function askAgain() {
+    do {
+
+        await chooseTheLevel()
+        var again = await inquirer.prompt({
+            type: "input",
+            name: "restart",
+            message: "Do you want to continue? press y or n: "
+        })
+    } while (again.restart === "y" || again.restart === "Y" || again.restart === "yes" || again.restart === "YES");
+}
+
+await askAgain()
