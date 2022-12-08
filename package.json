@@ -1,0 +1,35 @@
+{
+  "name": "guess-the-number-game-with-typescript-and-node",
+  "version": "1.0.0",
+  "description": "I have developed the guess the number game using TypeScript, Node.js, and Inquirer.js.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HamzaAhmedSheikh/guess-the-number-game-with-typescript-and-node.js.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HamzaAhmedSheikh/guess-the-number-game-with-typescript-and-node.js/issues"
+  },
+  "homepage": "https://github.com/HamzaAhmedSheikh/guess-the-number-game-with-typescript-and-node.js#readme",
+  "dependencies": {
+    "chalk": "^5.1.2",
+    "chalk-animation": "^2.0.3",
+    "figlet": "^1.5.2",
+    "gradient-string": "^2.0.2",
+    "inquirer": "^9.1.4"
+  },
+  "devDependencies": {
+    "@types/chalk": "^2.2.0",
+    "@types/chalk-animation": "^1.6.1",
+    "@types/figlet": "^1.5.5",
+    "@types/gradient-string": "^1.1.2",
+    "@types/inquirer": "^9.0.3",
+    "@types/node": "^18.11.11"
+  }
+}
