@@ -44,3 +44,15 @@ async function welcome() {
     }
 
 await welcome()
+
+// easy level
+let randomNumber: number = Math.floor(Math.random() * 25);
+// medium level
+let randomMediumNumber: number = Math.floor(Math.random() * 50);
+// hard level
+let randomNumberThree: number = Math.floor(Math.random() * 100);
+
+let score: number = 0
+let chances: number = 5;
+let secondChance: number = 5;
+let thirdChance: number = 5;
