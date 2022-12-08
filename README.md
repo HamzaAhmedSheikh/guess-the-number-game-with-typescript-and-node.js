@@ -5,4 +5,4 @@
 ### step-1:- open the terminal and go to the project path and run.
 ### step-2:- npm i guess-the-number-game-by-hamza && npx guess-the-number-game-by-hamza
 ### after executing the above command you will see this screen.
-![Screenshot](capture.png)
+![Screenshot](number-guess-capture.PNG)
